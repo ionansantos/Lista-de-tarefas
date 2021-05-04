@@ -1,0 +1,74 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container {
+    width: 100%;
+    max-width: 900px;
+    padding: 4rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.459);
+    border-radius: 8px;
+  
+    .btn {
+        background-color: rgb(73, 213, 255);
+        border: 1px solid transparent;
+        transition: 0.3s;
+
+        &:hover {
+            background-color: white;
+            color: rgb(73, 213, 255);
+            border: 1px solid rgb(73, 213, 255);
+            transform: translateY(6px);
+        }
+    }
+
+    .form {
+        grid-column: 2;
+        grid-row: 1;
+    }
+    .edit-btn {
+        grid-column: 2;
+        grid-row: 2;
+    }
+.h-img {
+    padding-top: 2rem;
+    grid-column: 1;
+    max-width: 100%;
+    width: 300px;
+}
+}
+
+
+@media(min-width:300px) and (max-width:640px){
+    .container{
+        margin-top: 20%;
+        display: block;
+        width: 300px;
+        padding: 15px ;
+
+        .h-img {
+            display: block;
+            margin:  0 auto;
+            width: 200px;
+            
+        }
+        h1{
+            text-align: center;
+            font-size: 2.4rem;
+    
+        }
+        h2{
+            text-align: center;
+            font-size: 2rem;
+            padding-top: 2rem;
+        }   
+        input{
+            width: 100%;
+        } 
+     }
+
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Lista de tarefas</title>
+</head>
+
+<body>
+
+    <section class="container" id="app">
+        <h1>Lista de Tarefas </h1>
+        <img src="img/list.png" class="h-img" alt="">
+
+        <div v-if="!edit" class="form">
+            <h2>Crie aqui sua Tarefa</h2>
+            <input type="text" v-model="tarefa" @keyup.enter="adicionaTarefa" v-focus="inputFocus">
+            <input  class="btn" type="submit" @click="adicionaTarefa" value="adicionar">
+        </div>
+        <div v-else class="form">
+            <h2>Crie aqui sua Tarefa</h2>
+            <input  type="text" v-model="tarefa" @keyup.enter="atualizaTarefa"  v-focus="inputFocus">
+            <input class="btn" type="submit" @click="atualizaTarefa" value="atualiza">
+        </div>
+        <div class="edit-btn">
+            <ol>
+                <li v-for="(tarefa, index) in tarefas">
+                    <p>
+                        {{tarefa}}
+                    </p>
+                    <button class="btn-tarefa" @click="deletarTarefa(index)">Deletar</button>
+                    <button class="btn-tarefa" @click="editaTarefa(index, tarefa)">Editar</button>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+
+    <script src="js/vue.js"> </script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
