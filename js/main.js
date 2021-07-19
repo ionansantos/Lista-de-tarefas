@@ -11,6 +11,7 @@ const app = new Vue({
         if(this.tarefa === null){
             window.alert('O campo de Texto  está vazio')
             this.deletarTarefa(index)
+            this.saveTarefa();
         }
         this.tarefas.push(this.tarefa);
         this.tarefa = '';
